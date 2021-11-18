@@ -1,0 +1,88 @@
+<header>
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button className="navbar-toggler" type="button" 
+        data-toggle="collapse" data-target="#navbarText">
+          <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mr-auto text-left">
+              <li className="nav-item active">
+                  <a className="nav-link" href="/">Home</a>
+              </li>
+          </ul>
+      </div>
+      <a className="navbar-brand" href="/">Mathificent</a>
+  </nav>
+</header>
+
+
+<footer className="navbar fixed-bottom bg-dark">
+  <a href="https://www.webucator.com" className="text-light">
+    Copyright &copy; {new Date().getFullYear()} Webucator
+  </a>
+</footer>
+
+
+export function randInt(low, high) {
+  const rndDec = Math.random();
+  return Math.floor(rndDec * (high - low + 1) + low);
+}
+
+function getRandNumbers(operator, low, high) {
+  let num1 = randInt(low, high);
+  let num2 = randInt(low, high);
+  const numHigh = Math.max(num1, num2);
+  const numLow = Math.min(num1, num2);
+  
+  if(operator === '-') { // Make sure higher num comes first
+    num1 = numHigh;
+    num2 = numLow;
+  }
+  
+  if(operator === '/') {
+      if (num2 === 0) { // No division by zero
+        num2 = randInt(1, high);
+      }
+      num1 = (num1 * num2);
+    }
+  return {num1, num2};
+}
+
+function checkAnswer(userAnswer) {
+  if (isNaN(userAnswer)) return false; // User hasn't answered
+  
+  let correctAnswer;
+  switch(operation) {
+    case '+':
+      correctAnswer = operands.num1 + operands.num2;
+      break;
+    case '-':
+      correctAnswer = operands.num1 - operands.num2;
+      break;
+    case 'x':
+      correctAnswer = operands.num1 * operands.num2;
+      break;
+    default: // division
+      correctAnswer = operands.num1 / operands.num2;
+  }
+  return (parseInt(userAnswer) === correctAnswer);
+}
+
+
+  if (timeLeft === 0) {
+    return (
+      <div className="text-center" id="game-container">
+        <h2>Time's Up!</h2>
+        <strong style={{fontSize: "1.5em"}}>You Answered</strong>
+        <div style={{fontSize: "5em"}}>{score}</div>
+        <strong style={{fontSize: "1.5em"}}>Questions Correctly</strong>
+        <button className="btn btn-primary form-control m-1"
+          onClick={restart}>
+            Play Again with Same Settings
+        </button>
+        <Link className="btn btn-secondary form-control m-1" to="/">
+          Change Settings
+        </Link>
+      </div>
+    )
+  }
