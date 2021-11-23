@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectInput from './childComponents/SelectInput';
-import PlayButton from './childComponents/PlayButton';
+import SelectInput from './SelectInput';
+import PlayButton from './PlayButton';
 
 function Main() {
     const operations = ['+', 'x', '/', '-'];
