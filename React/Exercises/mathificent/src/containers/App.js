@@ -12,25 +12,20 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Routes>
-        <Route exact path="/" caseSensitive={false}
-          element={ () => 
+      <Routes>
+        <Route exact path="/"
+          element={  
             <Main operation={operation} 
               setOperation={setOperation} 
               maxNumber={maxNumber} 
               setMaxNumber={setMaxNumber} />} 
         />
-        <Route path="/play" caseSensitive={false}
-          element={ () => 
+        <Route path="/play"
+          element={  
             <Game operation={operation} 
               maxNumber={maxNumber} />} 
         />
-      </Routes> */}
-      <Main operation={operation} 
-        setOperation={setOperation} 
-        maxNumber={maxNumber} 
-        setMaxNumber={setMaxNumber} />
-      <Game operation={operation} maxNumber={maxNumber} />
+      </Routes>
       <Footer />
     </div>
   );

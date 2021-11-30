@@ -4,7 +4,7 @@ import PlayButton from './PlayButton';
 import './Main.css';
 
 function Main(props) {
-    const operations = [['Addition',' +'], ['Multiplication',' x'], ['Division', ' /'], ['Subtraction',' -']];
+    const operations = [['Addition','+'], ['Multiplication','x'], ['Division', '/'], ['Subtraction','-']];
     const numbers = [];
 
     for (let number = 2; number <= 100; number++) {

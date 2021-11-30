@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 
 function SelectedInput({label, id, values, currentValue, setCurrentValue}) {
     const selectOptions = values.map((value) => 
-        <option value={value[0]} key={value.toString()}>{value[0]}</option>
+        <option value={value[1]} key={value.toString()}>{value[0]}</option>
 );
 
     return (
